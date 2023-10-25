@@ -1,0 +1,257 @@
+    1  ssh-keygen
+    2  sudo apt update
+    3  sudo apt install awscli
+    4  aws configure
+    5  ls
+    6  chmod +x ./kubectl
+    7  sudo mv kubectl /usr/local/bin/
+    8  kubectl --help
+    9  wget https://github.com/kubernetes/kops/releases/download/v1.26.4/kops-linux-amd64
+   10  ls
+   11  chmod +x kops-linux-amd64
+   12  sudo mv kops-linux-amd64 /usr/local/bin/kops
+   13  kops
+   14  nslookup -type=ns kubevpro.devopsguide.site
+   15  kops create cluster --name=kubevpro.devopsguide.site --state=s3://kops-state123 --z>   16  kops create cluster --name kubevpro.devopsguide.site --state s3://kops-state123 --z>   17  kops update cluster --name kubevpro.devopsguide.site --state=s3://kops-state123 --y>   18  kops validate cluster --state=s3://kops-state123
+   19  cat ~/.kube/config
+   20  kubectl get nodes
+   21  kops delete cluster --name=kubevpro.devopsguide.site --state=s3://kops-states --yes
+   22  sudo poweroff
+   23  history
+   24  cat ~/.kube/config
+   25  historyls
+   26  ls
+   27  cd /usr/local/bin/
+   28  ls
+   29  cat ~/.kube/config
+   30  historyls
+   31  kops validate cluster --state=s3://kops-state123
+   32  cat ~/.kube/config
+   33  sudo -i
+   34  kubectl get nodes
+   35  ls -a
+   36  cat .kube/config
+   37  kubectl describe nodes
+   38  kubectl get nodes
+   39  kubectl get node i-032ad41ad42897a3d -o yaml
+   40  sudo mkdir definitions
+   41  cd definitions
+   42  mkdir pod
+   43  sudo mkdir pod
+   44  cd pod
+   45  vim vproapppod.yaml
+   46  sudo vim vproapppod.yaml
+   47  chmod +w vproapppod.yaml
+   48  sudo chmod +w vproapppod.yaml
+   49  sudo chmod +x vproapppod.yaml
+   50  sudo kubectl create -f vproapppod.yaml
+   51  kubectl cluster-info
+   52  kops delete cluster --name=kubevpro.devopsguide.site --state=s3://kops-states --yes
+   53  sudo kops delete cluster --name=kubevpro.devopsguide.site --state=s3://kops-states >   54  kops delete cluster --name=kubevpro.devopsguide.site --state=s3://kops-state123 --y>   55  sudo kubectl create -f vproapppod.yaml
+   56  kops create cluster --name kubevpro.devopsguide.site --state s3://kops-state123 --z>   57  kops update cluster --name kubevpro.devopsguide.site --state=s3://kops-state123 --y>   58  kubectl get pods
+   59  kubectl --help
+   60  kubectl get svc
+   61  kubectl get pods
+   62  kubectl get nodes
+   63  ls
+   64  vim mysql.yaml
+   65  kubectl apply -f mysqlpod.yaml
+   66  kubectl apply -f mysql.yaml
+   67  kubectl get pod
+   68  kubectl describe pod dbpod
+   69  kubectl get pod
+   70  kubectl delete pod dbpod
+   71  vim samplecm.yaml
+   72  kubectl apply -f samplecm.yaml
+   73  kubectl get cm
+   74  kubectl get pods
+   75  kubectl get cm
+   76  kubectl get pods
+   77  kubectl get cm
+   78  vim readcmpod.yaml
+   79  kubectl apply -f readcmpod.yaml
+   80  kubectl get pod
+   81  kubectl exec --stdin --tty configmap-demo-pod -- /bin/sh
+   82  kubectl get pod
+   83  kubectl get cm
+   84  kubectl exec --stdin --tty configmap-demo-pod -- /bin/sh
+   85  vim samplecm.yaml
+   86  clear
+   87  kubectl get configmap game-demo -o yaml
+   88  kubectl describe pod configmap-demo-pod
+   89  kubectl logs configmap-demo-pod -c demo
+   90  kubectl create configmap
+   91  vim ame-demo-configmap.yaml
+   92  vim game-demo-configmap.yaml
+   93  kubectl apply -f game-demo-configmap.yaml
+   94  kubectl get pods
+   95  kubectl describe pod configmap-demo-pod
+   96  kubectl get pods
+   97  kops validate cluster --state=s3://kops-state123
+   98  kubectl get pods
+   99  kops delete cluster --name=kubevpro.devopsguide.site --state=s3://kops-state123 --y>  100  sudo poweroff
+  101  sudo apt update
+  102  ls
+  103  Last login: Mon Oct 23 22:17:00 2023 from 88.243.143.1
+  104  sudo mv kubectl /usr/local/bin/
+  105  cd /usr/local/bin/
+  106  ls
+  107  chmod +x ./kubectl
+  108  kops
+  109  nslookup -type=ns kubevpro.devopsguide.site
+  110  kops create cluster --name kubevpro.devopsguide.site --state s3://kops-state123 --z>  111  kops update cluster --name kubevpro.devopsguide.site --state=s3://kops-state123 --y>  112  kops validate cluster --state=s3://kops-state123
+  113  aws ec2 create-volume --availability-zone=us-east-1a --size=3 --volume-type=gp2
+  114  kubectl get nodes --show-labels
+  115  kubectl get nodes
+  116  kubectl describe node i-017d9c3839bd51f4f | grep us-east
+  117  kubectl describe node i-017d9c3839bd51f4f | grep us-east-1a
+  118  kubectl label nodes i-017d9c3839bd51f4f zone=us-east-1a
+  119  kubectl describe node i-07abbd53936bc5214
+  120  kubectl describe node i-07abbd53936bc5214 | grep us-east
+  121  kubectl label nodes i-07abbd53936bc5214 zone=us-east-1b
+  122  echo -n ``vprodbpass`` | base64
+  123  echo -n ``guest`` | base64
+  124  cd ~
+  125  git clone https://github.com/elandil2/kube-app.git
+  126  ls
+  127  cd kube-app
+  128  ls
+  129  cat app-secret.yaml
+  130  kubectl create -f app-secret.yaml
+  131  kubectl get secret
+  132  kubectl describe secret
+  133  history | grep labels
+  134  kubectl get nodes --show-labels
+  135  git pull
+  136  ls
+  137  kubectl create -f vprodbdep.yaml
+  138  kubectl get deploy
+  139  kubectl get pod
+  140  kubectl describe pod
+  141  docker pull holyguide/vprofiledb:V1
+  142  sudo apt  install docker.io
+  143  docker pull holyguide/vprofiledb:V1
+  144  sudo docker pull holyguide/vprofiledb:V1
+  145  docker login
+  146  docker pull holyguide/vprofileapp:latest
+  147  docker pull holyguide/vprofileapp
+  148  sudo docker pull holyguide/vprofileapp
+  149  docker pull holyguide/vprofiledb:V1
+  150  sudo docker pull holyguide/vprofiledb
+  151  kubectl create -f vprodbdep.yaml
+  152  kubectl apply -f vprodbdep.yaml
+  153  kubectl get pods
+  154  kubectl delete deployment
+  155  kubectl get deployment
+  156  kubectl delete deployment vprodb
+  157  kubectl get deployment
+  158  kubectl get pods
+  159  kubectl create -f vprodbdep.yaml
+  160  kubectl get pods
+  161  kubectl get deployment
+  162  kubectl describe pod vprodb-7564986684-nf99k
+  163  ls
+  164  docker images
+  165  sudo docker images
+  166  git pull
+  167  kubectl get deployment
+  168  kubectl delete deployment vprodb
+  169  kubectl create -f vprodbdep.yaml
+  170  kubectl get pod
+  171  kubectl get deployment
+  172  kubectl describe vprodb-7564986684-8sk4b
+  173  kubectl describe pod vprodb-7564986684-8sk4b
+  174  ls
+  175  vim vprodbdep.yaml
+  176  kubectl apply -f vprodbdep.yaml
+  177  kubectl describe pod vprodb-7564986684-8sk4b
+  178  kubectl get deployment
+  179  kubectl get pods
+  180  kubectl get deployment
+  181  kubectl describe pod vprodb-7c699987d7-6mphl
+  182  kubectl get pods
+  183  git fetch
+  184  ls
+  185  vim vprodbdep.yaml
+  186  kubectl delete deployment
+  187  kubectl get deployment
+  188  kubectl delete deployment vprodb
+  189  kubectl get pods
+  190  kubectl create -f vprodbdep.yaml
+  191  kubectl get deployment
+  192  kubectl get pods
+  193  kubectl describe pod vprodb-748fbfb6b9-cpkql
+  194  kubectl get pods
+  195  sudo docker pull holyguide/vprofileapp
+  196  git fetch
+  197  ls
+  198  git fetch
+   199  cd ..
+  200  ls
+  201  cd kube-app
+  202  ls
+  203  git pull
+  204  git fetch
+  205  ls
+  206  git checkout main
+  207  ls
+  208  git pull
+  209  git add vprodbdep.yaml
+  210  git commit -m "Your commit message"
+  211  git checkout vprodep.yaml
+  212  git stash
+  213  git pull
+  214  git stash pop
+  215  ls
+  216  git pull --no-rebase
+  217  ls
+  218  vim vprodep.yaml
+  219  vim rmq-CIP.yaml
+  220  git fetch
+  221  ls
+  222  cat vprodbdep.yaml
+  223  vim vprodep.yaml
+  224  vim vprodep.yclearaml
+  225  cat vprodbdep.yaml
+  226  kubectl create -f .
+  227  kubectl get deploy
+  228  kubectl get pod
+  229  kubectl describe pod vproapp-6696d75b6b-9r8v4
+  230  kubectl get pod
+  231  kubectl get deploy
+  232  kubectl get svc
+  233  kubectl get deploy
+  234  kubectl get svc
+  235  kubectl get pods
+  236  kubectl apply -f .
+  237  kubectl get deploy
+  238  kubectl get pods
+  239  kubectl describe pod vproapp-6696d75b6b-9r8v4
+  240  kubectl logs pod vproapp-6696d75b6b-9r8v4
+  241  kubectl logs  vproapp-6696d75b6b-9r8v4
+  242  kubectl logs  vproapp-6696d75b6b-9r8v4 -c init-mydb
+  243  kubectl get svc
+  244  git fetch
+  245  ls
+  246  cat vproappdep.yaml
+  247  git pull
+  248  cat vproappdep.yaml
+  249  git fetch
+  250  cat vproappdep.yaml
+  251  git pull
+  252  git stash
+  253  git pull --no-rebase
+  254  cat vproappdep.yaml
+  255  clear
+  256  kubectl apply -f .
+  257  kubectl get svc
+  258  kubectl get pods
+  259  kubectl get deploy
+  260  kubectl get pod
+  261  cd
+  262  ls
+  263  cd kube-app
+  264  kubectl delete -f .
+  265  kops delete cluster --name=kubevpro.devopsguide.site --state=s3://kops-state123 --y>  266  sudo poweroff
+  267  history
+  268  history > history.txt
